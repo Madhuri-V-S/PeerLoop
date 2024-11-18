@@ -4,7 +4,6 @@ import styled from "styled-components";
 import "./App.css";
 import Header from "./components/Header";
 
-
 function App() {
   return (
     <div className="app">
@@ -26,5 +25,6 @@ function App() {
 export default App;
 
 const AppBody = styled.div`
-  // Add styles if needed
+  display: flex;
+  height: 100vh;
 `;
