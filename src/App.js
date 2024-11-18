@@ -1,25 +1,30 @@
 import React from "react";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import styled from "styled-components";
 import "./App.css";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
-import Header from "./components/Header"; // Ensure this import is correct
+import Header from "./components/Header";
+
 
 function App() {
   return (
     <div className="app">
       <Router>
-        <Routes>
-          <Route
-            path="/"
-            element={<Header />} // Use element prop to render Header component
-          />
-        </Routes>
+        <>
+          <Header />
+          <AppBody>
+            <SideBar />
+            <Routes>
+              <Route path="/" element={<Header />} /> {/* Render Header on "/" */}
+            </Routes>
+          </AppBody>
+        </>
       </Router>
     </div>
   );
 }
 
 export default App;
+
+const AppBody = styled.div`
+  // Add styles if needed
+`;
